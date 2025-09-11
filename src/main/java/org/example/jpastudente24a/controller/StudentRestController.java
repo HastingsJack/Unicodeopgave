@@ -16,6 +16,11 @@ import java.util.Optional;
 @RestController
 public class StudentRestController {
 
+    @GetMapping("/")
+    public String hello() {
+        return "Hello";
+    }
+
     //Unicode Assignment
     @GetMapping("/unicode/{i}")
     public String unicodeToChar(@PathVariable int i) {
