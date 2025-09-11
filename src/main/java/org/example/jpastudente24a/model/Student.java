@@ -18,6 +18,10 @@ public class Student {
     private LocalDate bornDate;
     private LocalTime bornTime;
 
+    public Student() {
+
+    }
+
     public int getId() {
         return id;
     }
