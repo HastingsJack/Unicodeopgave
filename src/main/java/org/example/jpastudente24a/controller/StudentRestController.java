@@ -1,5 +1,6 @@
 package org.example.jpastudente24a.controller;
 
+import org.example.jpastudente24a.JpaStudentE24AApplication;
 import org.example.jpastudente24a.model.Student;
 import org.example.jpastudente24a.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +32,17 @@ public class StudentRestController {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @GetMapping("/addstudent")
+    public List<Student> addStudent() {
+        Student student = new Student();
+        student.setBornDate(LocalDate.now());
+        student.setBornTime(LocalTime.now());
+        List <Student> students = studentRepository.findAll();
+        student.setName("Autogenerere" + students.size());
+        studentRepository.save(student);
+        return studentRepository.findAll();
+    }
 
     @GetMapping("/students")
     public List<Student> getStudents() {
