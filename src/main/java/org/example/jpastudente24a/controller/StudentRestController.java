@@ -55,7 +55,7 @@ public class StudentRestController {
         return students;
     }
 
-    @PostMapping("/student")
+    @PostMapping("/sstudent")
     @ResponseStatus(HttpStatus.CREATED)
     public Student postStudent(@RequestBody Student student) {
         System.out.println("Putting in a new student");
