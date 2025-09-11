@@ -18,7 +18,7 @@ class StudentRepositoryTest {
     @Test
     void testOneStudent() {
         List<Student> list = studentRepository.findAll();
-        assertEquals(1, list.size());
+        assertEquals(2, list.size());
     }
 
 }
