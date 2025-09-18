@@ -26,23 +26,23 @@ public class InitData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Set<Character> letters = new HashSet<>();
-        for(int i = 33; i < 128; i++) {
-            letters.add((char)i);
-        }
-
-        for(char letter : letters) {
-            Unicode code = new Unicode();
-            if(letter == '?') {
-                code.setDescription("FAVORITE");
-            }
-            if(letter == 'b') {
-                code.setDescription("eewwww");
-            }
-            code.setUnicode(letter);
-            code.setLetter(letter);
-            unicodeRepository.save(code);
-        }
+//        Set<Character> letters = new HashSet<>();
+//        for(int i = 33; i < 128; i++) {
+//            letters.add((char)i);
+//        }
+//
+//        for(char letter : letters) {
+//            Unicode code = new Unicode();
+//            if(letter == '?') {
+//                code.setDescription("FAVORITE");
+//            }
+//            if(letter == 'b') {
+//                code.setDescription("eewwww");
+//            }
+//            code.setUnicode(letter);
+//            code.setLetter(letter);
+//            unicodeRepository.save(code);
+//        }
 
         Student student = new Student();
         student.setName("John");
